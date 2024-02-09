@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import LoaderAnimation from "../../../components/loaderAnimation/Loader";
 import {
   useLoaderData,
   Link,
@@ -75,21 +76,17 @@ function ShopPage() {
     });
     return (
       <>
-        <div
-          className={
-            navigation.state === "loading"
-              ? styles.loadingProductList
-              : styles.productsList
-          }
-        >
-          {productsToDisplay}
-        </div>
+        {navigation.state === "loading" ? (
+          <LoaderAnimation />
+        ) : (
+          <div className={styles.productsList}>{productsToDisplay}</div>
+        )}
       </>
     );
   }
   return (
     <>
-      <Suspense fallback={<h2>Loading...</h2>}>
+      <Suspense fallback={<LoaderAnimation />}>
         <Await resolve={dataPromise.catogories}>{renderCategoryButtons}</Await>
         <Await resolve={dataPromise.products}>{renderProducts}</Await>
       </Suspense>

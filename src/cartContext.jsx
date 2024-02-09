@@ -55,8 +55,6 @@ function cartReducer(state, action) {
       const updatedCart = state.filter((product) => product.id !== idTodelete);
       return updatedCart;
     }
-    default: {
-      return state;
-    }
   }
+  throw Error("Unknown action: " + action.type);
 }

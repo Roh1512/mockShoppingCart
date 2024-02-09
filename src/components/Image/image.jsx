@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import PropTypes from "prop-types";
+import LoaderAnimation from "../loaderAnimation/Loader";
 
 function Image({ className, url }) {
   const [isLoading, setIsLoading] = useState(true);
@@ -16,7 +18,7 @@ function Image({ className, url }) {
 
   return (
     <div>
-      {isLoading && <div>Loading...</div>}
+      {isLoading && <LoaderAnimation />}
       {isError && <div>Error loading image.</div>}
       <LazyLoadImage
         src={url}
@@ -28,5 +30,10 @@ function Image({ className, url }) {
     </div>
   );
 }
+
+Image.propTypes = {
+  className: PropTypes.string,
+  url: PropTypes.string,
+};
 
 export default Image;

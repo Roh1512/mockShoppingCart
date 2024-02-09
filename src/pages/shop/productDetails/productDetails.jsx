@@ -1,5 +1,6 @@
 import styles from "./productDetails.module.css";
 import Image from "../../../components/Image/image";
+import LoaderAnimation from "../../../components/loaderAnimation/Loader";
 import { getProduct } from "../../../api";
 import {
   defer,
@@ -48,7 +49,7 @@ function ProductDetails() {
             &larr; Back to {category} Products
           </button>
         </Link>
-        <Suspense fallback={<h1>Loading...</h1>}>
+        <Suspense fallback={<LoaderAnimation />}>
           <Await resolve={dataPromise.product}>
             {(product) => {
               return (

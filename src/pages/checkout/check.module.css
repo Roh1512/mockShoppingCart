@@ -1,7 +1,6 @@
 .checkoutDiv {
   min-height: calc(100vh-156px);
   width: 100%;
-  /* max-width: 400px; /* Adjust this value according to your design */
   min-height: max-content;
   display: flex;
   flex-direction: column;
