@@ -10,6 +10,22 @@
   height: fit-content;
   background-color: var(--shopBg);
 }
+.loadingProductList {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  align-items: center;
+  justify-items: center;
+  gap: 3rem;
+  padding: 10px;
+  min-height: 100vh;
+  height: fit-content;
+  background-color: var(--shopBg);
+  filter: blur(5px);
+  opacity: 0.25;
+  transition: all 200ms;
+  transition-delay: 200ms;
+}
 
 .categoryDiv {
   display: flex;

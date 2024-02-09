@@ -19,28 +19,32 @@ function CheckoutPage() {
       <div className={styles.checkoutDiv}>
         <h1 className={styles.checkoutheading}>Order Details</h1>
         <table>
-          <tr>
-            <th>Product</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Total</th>
-          </tr>
-          {cartState.map((product) => {
-            return (
-              <>
-                <tr>
-                  <td>{product.title}</td>
-                  <td>${product.price}</td>
-                  <td>{product.count}</td>
-                  <td>${product.count * product.price}</td>
-                </tr>
-              </>
-            );
-          })}
-          <tr>
-            <th>Bill Total</th>
-            <th colSpan={3}>${total}</th>
-          </tr>
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            {cartState.map((product) => {
+              return (
+                <>
+                  <tr>
+                    <td>{product.title}</td>
+                    <td>${product.price}</td>
+                    <td>{product.count}</td>
+                    <td>${product.count * product.price}</td>
+                  </tr>
+                </>
+              );
+            })}
+            <tr>
+              <th>Bill Total</th>
+              <th colSpan={3}>${total}</th>
+            </tr>
+          </tbody>
         </table>
         <p className={styles.orderDetailsTxt}>
           Your mock order has been placed! &#9989;

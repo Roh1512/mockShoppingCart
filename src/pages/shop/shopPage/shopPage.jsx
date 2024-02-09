@@ -5,6 +5,7 @@ import {
   defer,
   Await,
   useSearchParams,
+  useNavigation,
 } from "react-router-dom";
 import { Suspense } from "react";
 import styles from "./shopPage.module.css";
@@ -16,6 +17,7 @@ export async function loader() {
 }
 
 function ShopPage() {
+  const navigation = useNavigation();
   const dataPromise = useLoaderData();
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -73,7 +75,15 @@ function ShopPage() {
     });
     return (
       <>
-        <div className={styles.productsList}>{productsToDisplay}</div>
+        <div
+          className={
+            navigation.state === "loading"
+              ? styles.loadingProductList
+              : styles.productsList
+          }
+        >
+          {productsToDisplay}
+        </div>
       </>
     );
   }

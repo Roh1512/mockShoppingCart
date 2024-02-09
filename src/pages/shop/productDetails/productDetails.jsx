@@ -51,7 +51,6 @@ function ProductDetails() {
         <Suspense fallback={<h1>Loading...</h1>}>
           <Await resolve={dataPromise.product}>
             {(product) => {
-              console.log(product);
               return (
                 <>
                   <div className={styles.productDetailsDiv}>
