@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: center;
   gap: 30px;
-  padding: 20px;
+  padding: 10px;
   text-align: center;
 }
 
@@ -16,6 +16,7 @@ th,
 td {
   border: 2px solid;
   text-align: center;
+  word-wrap: break-word;
 }
 table {
   border-collapse: collapse;
@@ -46,4 +47,41 @@ td {
 }
 .homeBtn {
   color: black;
+}
+
+/* Add this CSS for responsiveness */
+@media screen and (max-width: 600px) {
+  table {
+    width: 100%;
+  }
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+  /* Hide table headers (thead) on small screens */
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  /* Set each table row to have a border bottom */
+  tr {
+    border: 1px solid #ccc;
+  }
+  td {
+    /* Set each table data (cell) to have a border top */
+    border-top: 1px solid #ccc;
+    /* Add padding to the table data */
+    padding: 10px;
+    /* Specify how wide the table data should be */
+    width: 100%;
+    /* Display the table data as a block element */
+    display: block;
+    /* Adjust the text alignment */
+    text-align: left;
+  }
 }
