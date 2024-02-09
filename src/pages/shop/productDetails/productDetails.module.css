@@ -1,0 +1,108 @@
+.productDetailsImage {
+  max-height: 600px;
+  max-width: 400px;
+}
+.backButton {
+  color: wheat;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.613);
+  padding: 10px;
+  border: none;
+  box-shadow: 0 0 5px 1px black;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 2px;
+  margin-left: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.productDetailsDiv {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  gap: 20px;
+}
+.productDetailsText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+}
+.productTitle {
+  font-size: 2rem;
+}
+.productPrice {
+  font-size: 1.7rem;
+  color: rgb(97, 2, 2);
+  font-weight: 600;
+}
+.productDescription {
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
+.orderForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.countDiv {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.countButton {
+  width: 40px;
+  font-size: 2rem;
+  background-color: transparent;
+  border: 1px solid black;
+  box-shadow: 0 0 4px 1px black;
+}
+.countButton:disabled {
+  filter: blur(1px);
+}
+
+.countInput {
+  text-align: center;
+  width: 3rem;
+  font-size: 2rem;
+  background-color: inherit;
+  border: 1px solid black;
+  box-shadow: 0 0 4px 1px black;
+}
+.addToCartBtn {
+  font-size: 1.5rem;
+  background-color: rgb(38, 38, 38);
+  color: wheat;
+  font-weight: 600;
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.totalInfo {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 700px) {
+  .productDetailsDiv {
+    flex-direction: column;
+  }
+  .productDetailsImage {
+    max-width: 60vw;
+    min-width: 250px;
+    max-height: 90vh;
+  }
+}

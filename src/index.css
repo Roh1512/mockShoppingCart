@@ -3,9 +3,27 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-size: 16px;
+  --shopBg: rgba(252, 236, 214, 0.996);
+  --categoryBtnBg: rgba(227, 197, 154, 0.857);
+  --ctaBtnBg: rgb(29, 20, 1);
+  --ctaBtnColor: wheat;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  min-width: 320px;
+  min-width: 250px;
   min-height: 100vh;
+  max-width: 1600px;
+  margin: auto;
+  background-color: var(--shopBg);
+}
+
+main {
+  margin-top: 60px;
+  width: 100%;
 }
