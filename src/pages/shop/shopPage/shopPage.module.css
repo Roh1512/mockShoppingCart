@@ -29,13 +29,21 @@
 
 .categoryDiv {
   display: flex;
-  flex-wrap: wrap;
   gap: 20px;
   align-items: center;
   justify-content: center;
   padding: 10px;
   background-color: var(--shopBg);
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
+  white-space: nowrap;
+  background-color: rgba(0, 0, 0, 0.481);
 }
+.categoryDiv::-webkit-scrollbar {
+  display: none;
+}
+
 .categoryBtn {
   background-color: var(--categoryBtnBg);
   box-shadow: 0 0 5px 1px black;
@@ -48,6 +56,7 @@
   transition: all 200ms;
   font-size: 1rem;
   font-weight: 600;
+  justify-self: ;
 }
 .categoryBtn:hover {
   background-color: black;
@@ -103,5 +112,8 @@
   color: chartreuse;
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 760px) {
+  .categoryDiv {
+    justify-content: flex-start; /* Align items to the start on smaller screens */
+  }
 }

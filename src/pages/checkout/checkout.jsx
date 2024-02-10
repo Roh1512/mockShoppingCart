@@ -1,18 +1,17 @@
 import { Link } from "react-router-dom";
+import { useMemo } from "react";
 import styles from "./check.module.css";
 import { useCartContext } from "../../cartContext";
 
 function CheckoutPage() {
   const cartState = useCartContext();
 
-  function totalPrice() {
-    let total = 0;
-    cartState.map((product) => {
-      return (total = total + product.count * product.price);
-    });
-    return total;
-  }
-  const total = totalPrice();
+  const totalPrice = useMemo(() => {
+    return cartState.reduce(
+      (total, product) => total + product.count * product.price,
+      0
+    );
+  }, [cartState]);
 
   return (
     <>
@@ -44,7 +43,7 @@ function CheckoutPage() {
                 })}
                 <tr>
                   <th>Bill Total</th>
-                  <th colSpan={3}>${total}</th>
+                  <th colSpan={3}>${totalPrice}</th>
                 </tr>
               </tbody>
             </table>

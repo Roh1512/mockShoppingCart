@@ -4,16 +4,15 @@ import Image from "../../components/Image/image";
 import DeleteIcon from "../../assets/deleteicon";
 import { Link } from "react-router-dom";
 import { useCartContext, useCartDispatchContext } from "../../cartContext";
+import { useMemo } from "react";
 function Cart() {
   const cartState = useCartContext();
-  function totalPrice() {
-    let total = 0;
-    cartState.map((product) => {
-      return (total = total + product.count * product.price);
-    });
-    return total;
-  }
-  const total = totalPrice();
+  const totalPrice = useMemo(() => {
+    return cartState.reduce(
+      (total, product) => total + product.count * product.price,
+      0
+    );
+  }, [cartState]);
 
   return (
     <>
@@ -28,12 +27,15 @@ function Cart() {
           })}
           <div className={styles.checkoutDiv}>
             <p className={styles.totalPrice}>
-              Total: <span>${total}</span>
+              Total: <span>${totalPrice}</span>
             </p>
             <Link to="checkout">
               <button className={styles.checkoutButton}>
                 Proceed to checkout
               </button>
+            </Link>
+            <Link to="/shop">
+              <button className={styles.shopBtn}>Continue Shopping</button>
             </Link>
           </div>
         </div>

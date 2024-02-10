@@ -4,7 +4,7 @@ header {
   align-items: center;
   justify-content: space-between;
   margin: 0;
-  padding: 20px;
+  padding: 10px;
   position: fixed;
   top: 0;
   background-color: var(--shopBg);
@@ -91,8 +91,7 @@ a {
     display: flex;
     flex-direction: column;
     background-color: var(--shopBg);
-    border-left: 2px solid black;
-    border-bottom: 2px solid black;
+
     right: 0;
     top: 58px;
     width: 0;
@@ -103,6 +102,8 @@ a {
   .infoLinks.active {
     width: 80vw;
     height: 100px;
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
   }
   .menuIcon {
     display: block;

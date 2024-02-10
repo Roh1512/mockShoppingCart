@@ -19,9 +19,11 @@
   font-weight: 700;
   padding: 10px 15px;
   cursor: pointer;
-  background: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.673));
-  color: white;
-  border: none;
-  outline: none;
+  background: transparent;
+  box-shadow: 0 0 5px 2px black;
+  color: rgb(4, 4, 4);
+  border: 2px solid black;
   border-radius: 5px;
+  margin: 20px;
+  text-shadow: 1px 1px 5px black;
 }

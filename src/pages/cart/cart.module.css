@@ -106,6 +106,26 @@
   color: green;
   transform: scale(0.8);
 }
+.shopBtn {
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: transparent;
+  color: black;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 200ms;
+  box-shadow: 0 0 10px 1px rgb(152, 150, 150);
+}
+.shopBtn:hover {
+  background-color: rgb(36, 141, 198);
+  color: white;
+  border: none;
+}
+.shopBtn:active {
+  transform: scale(0.8);
+}
 
 .emptyCartDiv {
   position: absolute;
