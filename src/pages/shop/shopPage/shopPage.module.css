@@ -56,11 +56,6 @@
   transition: all 200ms;
   font-size: 1rem;
   font-weight: 600;
-  justify-self: ;
-}
-.categoryBtn:hover {
-  background-color: black;
-  color: wheat;
 }
 .categorySelected {
   background-color: black;
