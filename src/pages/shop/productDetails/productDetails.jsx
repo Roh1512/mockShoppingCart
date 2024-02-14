@@ -1,3 +1,5 @@
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import styles from "./productDetails.module.css";
 import Image from "../../../components/Image/image";
 import LoaderAnimation from "../../../components/loaderAnimation/Loader";
@@ -24,6 +26,7 @@ function ProductDetails() {
   const dispatch = useCartDispatchContext();
   const search = location.state?.search || "";
   const category = location.state?.category || "all";
+
   function incrementCount() {
     setCount((count) => count + 1);
   }
@@ -44,6 +47,7 @@ function ProductDetails() {
   return (
     <>
       <div className={styles.productDetailbody}>
+        <ToastContainer />
         <Link to={`..${"?" + search}`} relative="path">
           <button className={styles.backButton}>
             &larr; Back to {category} Products
@@ -52,6 +56,20 @@ function ProductDetails() {
         <Suspense fallback={<LoaderAnimation />}>
           <Await resolve={dataPromise.product}>
             {(product) => {
+              const notify = () =>
+                toast(
+                  `${count} ${
+                    count > 1 ? "products" : "product"
+                  } added to cart.`,
+                  {
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    theme: "dark",
+                    closeOnClick: true,
+                    draggable: true,
+                    position: "bottom-left",
+                  }
+                );
               return (
                 <>
                   <div className={styles.productDetailsDiv}>
@@ -67,7 +85,11 @@ function ProductDetails() {
                       </p>
                       <Form
                         className={styles.orderForm}
-                        onSubmit={() => addToCart(product)}
+                        onSubmit={(e) => {
+                          e.preventDefault();
+                          addToCart(product);
+                          notify();
+                        }}
                       >
                         <div className={styles.countDiv}>
                           <button
