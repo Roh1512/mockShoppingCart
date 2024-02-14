@@ -10,6 +10,7 @@ header {
   background-color: var(--shopBg);
   max-height: 60px;
   max-width: 1600px;
+  z-index: 1;
 }
 
 .homeIcon {
